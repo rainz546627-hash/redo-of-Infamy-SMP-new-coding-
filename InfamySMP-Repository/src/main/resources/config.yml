@@ -1,0 +1,8 @@
+# Infamy changes from player kills and deaths are always one point, clamped to -10..10.
+# Potion effect amplifier 0 means level I.
+leaderboard-size: 10
+milestone-announcements: true
+effects:
+  feared-at: 5
+  notorious-at: 8
+  legend-at: 10

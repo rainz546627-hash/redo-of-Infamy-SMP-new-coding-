@@ -1,0 +1,18 @@
+name: InfamySMP
+version: 1.0.0
+main: dev.infamy.smp.InfamyPlugin
+api-version: '1.21'
+description: Player-kill infamy, titles, rewards, and tradeable infamy shards.
+author: InfamySMP
+commands:
+  infamy:
+    description: View infamy, leaderboard, or withdraw infamy as a shard.
+    usage: /infamy [player|leaderboard|withdraw <amount>]
+    aliases: [infamies]
+permissions:
+  infamy.use:
+    description: View infamy and withdraw personal infamy.
+    default: true
+  infamy.admin:
+    description: Set or reset any known player's Infamy score.
+    default: op
