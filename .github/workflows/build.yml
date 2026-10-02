@@ -1,0 +1,26 @@
+name: Build Paper plugin
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+      - name: Build jar
+        run: mvn --batch-mode --no-transfer-progress -f InfamySMP-Repository/pom.xml clean package
+      - uses: actions/upload-artifact@v4
+        with:
+          name: InfamySMP-Paper-1.21.11
+          path: InfamySMP-Repository/target/InfamySMP.jar
